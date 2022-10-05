@@ -57,6 +57,20 @@ public:
     }
         return true;
     }
+    /*2293. Min Max Game */
+    int minMaxGame(vector<int>& nums) {
+        size_t n{nums.size()};
+        while (n>1){
+            vector<int> newNums(n/2);
+            for (auto k=0; k<n/2; k++){
+                if (k%2 == 0) newNums[k]= min(nums[2*k], nums[2*k+1]);
+                else newNums[k] = max(nums[2*k], nums[2*k+1]);
+            }
+            n/=2;
+            nums = newNums;
+        }
+    return nums[0];
+    }
     
 };
 
