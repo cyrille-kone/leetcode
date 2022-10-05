@@ -1,6 +1,8 @@
 #include<vector>
 #include<string>
 #include<iostream>
+#include<map>
+#include<cmath>
 using namespace std;
 class Solution {
 public:
@@ -44,6 +46,16 @@ public:
         size_t freq {0};
         for (auto ss: s) freq += (ss==letter)?1:0;
        return (100*freq) / s.size();  
+    }
+    /*2283. Check if Number Has Equal Digit Count and Digit Value*/
+    
+    bool digitCount(string num) {
+    map<int, int> counter;
+    for (auto s: num)  counter[s - '0']++;
+    for (int k=0; k<num.size(); k++){
+        if ((num[k] - '0')!= counter[k]) return false;
+    }
+        return true;
     }
     
 };
