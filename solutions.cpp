@@ -39,6 +39,13 @@ public:
         }
         return res;
     }
+    /*2278. Percentage of Letter in String*/
+    int percentageLetter(string s, char letter) {
+        size_t freq {0};
+        for (auto ss: s) freq += (ss==letter)?1:0;
+       return (100*freq) / s.size();  
+    }
+    
 };
 
 
