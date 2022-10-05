@@ -71,6 +71,17 @@ public:
         }
     return nums[0];
     }
+    /*2315. Count Asterisks */
+    int countAsterisks(string s) {
+        bool ropen{false};
+        int count{0};
+        string symb{"|*"};
+        for (size_t k=0; k<s.size(); k++){
+            if (s[k] == symb[0]) ropen = !ropen;
+            else if( s[k]== symb[1]) count+= ropen?0:1;
+        }
+        return count;
+    }
     
 };
 
